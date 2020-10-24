@@ -16,10 +16,10 @@ class Sample {
 
 export const SampleInstance = new Sample();
 
-let resultFromJson = SampleInstance.translateFromJson('jsonKey');
-let resultFromJs = SampleInstance.translateFromJs('jsKey');
-
 //will fail, terser will mangle props of json dictionary because they are not quoted
+let resultFromJson = SampleInstance.translateFromJson('jsonKey');
 console.assert( resultFromJson === 'resultJson', `translation: ${resultFromJson}, source: json`);
+
 //will success, I quoted props by myself in JS, terser will not mangle them
+let resultFromJs = SampleInstance.translateFromJs('jsKey');
 console.assert( resultFromJs === 'resultJs', `translation is ${resultFromJs}, source: js`);

@@ -1,0 +1,8 @@
+# output dir
+dist/
+
+# npm
+node_modules/
+
+# IDE
+.idea/
